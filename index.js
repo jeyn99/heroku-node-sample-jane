@@ -1,5 +1,5 @@
 var app = require('express')();
-var http = require('http').createServer(app);
+var http = require('http').Server(app);
 var io = require('socket.io')(http);
 var port = process.env.PORT || 3000;
 var express = require('express');
@@ -21,27 +21,25 @@ io.on('connection', function (socket) { // This establish connection and can che
     }
     io.emit('name entry', ids, users);
   })
-
   socket.on('chat message', function (msg) {
     io.emit('chat message', msg);
   });
 
-  socket.on('typing', function (username) {
+  socket.on('typing', function(username) {
     socket.broadcast.emit('typing', username + " is typing...")
   })
 
-  socket.on('private', function (id, message) {
-    io.to(id).emit('private', id, message)
+  socket.on('private', function(id, message) {
+    io.to(id).emit('private', id,  message)
   })
 
-  socket.on("logout", function (user) {
+  socket.on("logout",function(user) {
     var index = users.indexOf(user);
     users.splice(index, 1);
     var id = ids[index];
     io.emit('logout', id);
   })
 });
-
 http.listen(port, function () {
-  console.log('listening on *: ' + port);
+  console.log('listening on *:' + port);
 });
