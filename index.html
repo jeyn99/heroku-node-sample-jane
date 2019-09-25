@@ -1,1 +1,75 @@
-<h1>Hello Phil!</h1>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ChitChat</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container-fluid">
+        <center>
+            <div id="login">
+                <div id="user">
+                    <h4>Welcome!</h4>
+                    <p class="card-text">
+                        <input class="form-control " id="username" placeholder="Username" /><br>
+                        <button class="btn btn-primary" id="btnLogIn">Log In</button>
+                    </p>
+                </div>
+            </div>
+        </center>
+
+        <div id="msgs" style="display:none;">
+            <div id="nav">
+                <!-- <button class="btn btn-warning" id="logout">Logout</button> -->
+                <input class="form-rounded user" readonly>
+            </div>
+            <div>
+                <div class="card-deck">
+                    <div class="card bg-light">
+                        <div class="card-body text-center table-wrapper-scroll-y my-custom-scrollbar">
+                            <h1>Active Users</h1>
+                            <ul class="list-group bg-secondary" id="ul">
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="card bg-info">
+                        <div class="card-body text-center">
+                            <div id="chatmsg" class='table-wrapper-scroll-y my-custom-scrollbar'>
+                                <p id="typing"></p>
+                            </div>
+                            <center>
+                                <form>
+                                    <input class="form-control" id="m" autocomplete="off">
+                                    <button class="btn btn-primary">Send</button>
+                                </form>
+                            </center>
+                        </div>
+                    </div>
+                    <div class="card bg-light">
+                        <div class="card-body text-center">
+                            <h3>Private Messages</h3>
+                            <div id="privatemsg" class='table-wrapper-scroll-y my-custom-scrollbar'>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="scripts.js"></script>
+    <script src="https://cdn.socket.io/socket.io-1.2.0.js"></script>
+    <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
+</body>
+
+</html>
