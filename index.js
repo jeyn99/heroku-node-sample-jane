@@ -42,6 +42,6 @@ io.on('connection', function (socket) { // This establish connection and can che
   })
 });
 
-http.listen(port,'0.0.0.0' ,function () {
+http.listen(port, function () {
   console.log('listening on *: ' + port);
 });
