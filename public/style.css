@@ -62,7 +62,6 @@
   }
   
   .form-control {
-    width: 300px;
     margin: 5px
   }
   .card {
@@ -72,7 +71,7 @@
   #login {
     margin-top: 5%;
     height: 700px!important;
-    background-image: url(/images/bg.jpg);
+    background-image: url(images/bg.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
