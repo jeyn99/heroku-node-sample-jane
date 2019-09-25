@@ -1,0 +1,29 @@
+{
+  "name": "heroku-node-sample-jane",
+  "version": "1.0.0",
+  "description": "A simple node app deployed to Heroku.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jeyn99/heroku-node-sample-jane.git"
+  },
+  "keywords": [
+    "node",
+    "heroku"
+  ],
+  "author": "Jane Repollo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jeyn99/heroku-node-sample-jane/issues"
+  },
+  "homepage": "https://github.com/jeyn99/heroku-node-sample-jane#readme",
+  "engines": {
+    "node": "10.15"
+  },
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
