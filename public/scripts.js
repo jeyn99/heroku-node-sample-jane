@@ -57,8 +57,9 @@ $(function () {
         }
     });
 
-    $("li").on('click', function () { // to be check
-        let liID = $("li").attr("id");
+    $("ul").closest("li").on('click', function () { // to be check
+        alert("here")
+        let liID = $(this).attr("id");
         var message = prompt("Messages: ")
         socket.emit('private', liID, userName.val() + ": " + message)
     })
@@ -74,15 +75,7 @@ $(function () {
 
 
     socket.on('private', function (id, msg) { // samok
-        let name = msg.split(":");
-        let names = name[0]
-        console.log("Name: " + name[0] + "Username: " + userName.val())
-        if (name[0] != userName.val()) {
-            $("#privatemsg").append($("<input class='form-control bg-dark text-light' style = 'float: left' readonly> <br>").val(msg));
-        }
-        $('#privatemsg').append($("<input class='form-control bg-primary' style = 'float: right' readonly> <br>").val(message));
-        window.scrollTo(0, document.body.scrollHeight);
-
+        
     });
 });
 
