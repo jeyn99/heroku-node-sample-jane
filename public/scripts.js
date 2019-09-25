@@ -34,13 +34,13 @@ $(function () {
     socket.on('chat message', function (msg) {
         let name = msg.split(":");
         if (name[0] != userName.val()) {
-            var sendChat = $("<textarea row = '5' col = '10' class='form-control' style = 'float: left' readonly/> <br>").val(msg)
+            var sendChat = $("<textarea class='form-control' style = 'float: left' readonly/> <br>").val(msg)
             $('#chatmsg').append(sendChat); //receive
         } else {
-            var reChat = $("<textarea row = '5' col = '10' class='form-control bg-dark text-light' style = 'float: right' readonly/> <br>").val(msg);
+            var reChat = $("<textarea class='form-control bg-dark text-light' style = 'float: right' readonly/> <br>").val(msg);
             $('#chatmsg').append(reChat); // send
         }
-        window.scrollTo(0, document.body.scrollHeight);
+        $('textarea:last-child').show();
     });
 
     socket.on('name entry', function (id, names) {
