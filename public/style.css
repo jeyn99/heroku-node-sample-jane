@@ -5,7 +5,9 @@
       width: 120px;
     }
   
-  
+  .card-deck {
+    margin-top: 10px;
+  }
   
   .card {
     background-image: url("/images/bgcard.jpg");
@@ -23,7 +25,11 @@
     height: 630px;
     overflow: auto;
   }
-
+  
+  #logOut {
+    float: right; 
+    margin: 5px;
+  }
   
   ul, li {
     color: beige;
@@ -36,10 +42,10 @@
   }
   
   #nav {
-    
+    margin: 20px;
     float: right;
     position: sticky;
-    color: black;
+    color: black
   }
 
   textarea {
@@ -90,6 +96,7 @@
   }
   
   #user {
+    margin-top: 20%;
     margin-right: 20%;
     float: right;
     position: sticky;
