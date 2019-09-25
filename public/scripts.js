@@ -74,7 +74,6 @@ $(function () {
     })
   
   
-  
     socket.on('private', function (id, msg) { // samok
       let name = msg.split(":");
       let names = name[0]
@@ -86,8 +85,6 @@ $(function () {
       window.scrollTo(0, document.body.scrollHeight);
   
     });
-  
-  
   });
   
   
