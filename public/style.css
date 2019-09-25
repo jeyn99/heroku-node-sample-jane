@@ -46,10 +46,11 @@
     float: right;
   }
 
-  .input-form {
+  .form-control {
+    min-width: 100px;
     margin-top: 1%;
-    min-width: 200px;
   }
+  
   
   .form-rounded {
     border-radius: 1rem;
