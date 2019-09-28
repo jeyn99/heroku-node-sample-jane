@@ -9,6 +9,12 @@
     margin-top: 10px;
   }
   
+  #typing {
+    position: fixed;
+    right: 50%;
+    bottom: 95%;
+    width: 300px;
+  }
   .card {
     background-image: url("/images/bgcard.jpg");
     background-repeat: no-repeat;
