@@ -1,5 +1,4 @@
 $(function () {
-    var id;
     var userID;
     var listofusers = [];
     var userName = $("#username");
@@ -8,9 +7,13 @@ $(function () {
         if ($("input").val() === '') {
             alert("Fill up Username")
         } else {
-            $("#login").fadeOut(100);
-            $("#msgs").fadeIn(100);
-            socket.emit('name entry', userName.val())//join trigger
+            if (listofusers.includes(userName.val())) {
+                alert("Username already taken!")
+            } else {
+                $("#login").fadeOut(100);
+                $("#msgs").fadeIn(100);
+                socket.emit('name entry', userName.val())//join trigger
+            }
         }
     });
 
@@ -40,7 +43,6 @@ $(function () {
             var reChat = $("<textarea class='form-control bg-dark text-light' style = 'float: right' readonly/> <br>").val(msg);
             $('#chatmsg').append(reChat); // send
         }
-        $('textarea:last-child').show();
     });
 
     socket.on('name entry', function (id, names) {
@@ -55,14 +57,13 @@ $(function () {
                 }
             }
         }
-    });
-
-    $("ul").closest("li").on('click', function () { // to be check
-        alert("here")
-        let liID = $(this).attr("id");
-        var message = prompt("Messages: ")
-        socket.emit('private', liID, userName.val() + ": " + message)
-    })
+        $("li").click(function () { // to be check
+            let liID = $(this).attr("id");
+            var message = prompt("Messages: ")
+            socket.emit('private', liID, userName.val() + ": " + message)
+        })
+    }
+    );
 
     $(window).on("beforeunload", function () {
         alert($(".user").val());
@@ -75,7 +76,7 @@ $(function () {
 
 
     socket.on('private', function (id, msg) { // samok
-        
+        $('#privatemsg').append($("<textarea class='form-control bg-info text-light' readonly/> <br>").val(msg));
     });
 });
 
