@@ -20,7 +20,7 @@ $(function () {
     $('form').submit(function (e) {
         e.preventDefault();
         if( $('#m').val() != '') {
-            vsocket.emit('chat message', userName.val() + ": " + $('#m').val()); //trigger values
+            socket.emit('chat message', userName.val() + ": " + $('#m').val()); //trigger values
         }
         $('#m').val('');
     });
