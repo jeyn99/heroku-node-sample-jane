@@ -19,7 +19,9 @@ $(function () {
 
     $('form').submit(function (e) {
         e.preventDefault();
-        socket.emit('chat message', userName.val() + ": " + $('#m').val()); //trigger values
+        if( $('#m').val() != '') {
+            vsocket.emit('chat message', userName.val() + ": " + $('#m').val()); //trigger values
+        }
         $('#m').val('');
     });
 
